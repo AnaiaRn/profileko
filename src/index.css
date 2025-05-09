@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #0000;
+  background-color: #4f4f4f2e;
+}
+
+/* body {
+  background: transparent;
+  margin: 0;
+  padding: 0;
+} */

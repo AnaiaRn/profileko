@@ -1,3 +1,4 @@
+import { TbBrandGmail } from "react-icons/tb"; 
 import { SiGmail } from "react-icons/si"; 
 import { AiFillInstagram } from "react-icons/ai"; 
 import { AiFillGithub } from "react-icons/ai"; 
@@ -27,7 +28,7 @@ const Navbar = () => {
         </a>
         <a href="https://www.gmail.com/in/anaiarandrianantenaina@gmail.com"
         target='_blank' rel='noopener noreferrer' aria-label='Gmail'>
-            <SiGmail />
+            <TbBrandGmail />
         </a>
     </div>
    </nav>

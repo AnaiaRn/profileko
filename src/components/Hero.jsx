@@ -1,4 +1,17 @@
 import Sary from "../assets/sary.jpg";
+import { motion } from "framer-motion";
+
+const containerVariants = {
+  hidden : { opacity: 0, x: -100 },
+  visible : {
+    opacity : 1,
+    x : 0,
+    transition : {
+      duration : 0.5,
+      staggerChildren : 0.5,
+    }
+  }
+}
 
 const Hero = () => {
   return (

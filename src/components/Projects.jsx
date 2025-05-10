@@ -40,7 +40,7 @@ const Projects = () => {
                 Project developed during a hackathon organized by the Development Hub of ACCES Bank in Andrainjato, Fianarantsoa.
                 The goal was to design an innovative solution to streamline and digitalize business purchasing processes.
                 </p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium">Role:</span> Team Leader, UI/UX Designer & Frontend Developer</p>
+                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Role:</span> Team Leader, UI/UX Designer & Frontend Developer</p>
                 <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
                 text-stone-300">NextJS</span>
                 <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium

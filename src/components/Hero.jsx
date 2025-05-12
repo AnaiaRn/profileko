@@ -35,7 +35,7 @@ const Hero = () => {
                     Anaïa Randrianantenaina
                 </motion.h2>
                 <motion.span className="bg-gradient-to-r from-stone-300 to-stone-600
-                 bg-clip-text text-3xl tracking-tight" variants={childVariants}>
+                 bg-clip-text text-xl tracking-tight lg:text-3xl" variants={childVariants} >
                     Frontend Developer / UI/UX Designer / Wordpress Developer
                  </motion.span>
                  <motion.p className="my-2 max-w-lg py-6 text-xl leading-relaxed tracking-tighter">

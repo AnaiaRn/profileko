@@ -50,7 +50,7 @@ const Hero = () => {
                   My goal? To turn your vision into clean, creative, and functional web solutions.
 
                  </motion.p>
-                 <motion.a href="../assets/Logo A.R design_fichiers/CV.pdf" target="_blank" rel="noopener noreferrer" download className="bg-white
+                 <motion.a href="../assets/CV.pdf" target="_blank" rel="noopener noreferrer" download className="bg-white
                  rounded-full p-4 text-sm text-stone-800 mb-10" variants={childVariants}>
                     Download CV
                  </motion.a>

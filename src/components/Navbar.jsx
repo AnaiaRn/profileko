@@ -1,5 +1,4 @@
 import { TbBrandGmail } from "react-icons/tb"; 
-import { SiGmail } from "react-icons/si"; 
 import { AiFillInstagram } from "react-icons/ai"; 
 import { AiFillGithub } from "react-icons/ai"; 
 import { AiFillLinkedin } from "react-icons/ai"; 

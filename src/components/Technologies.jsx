@@ -1,3 +1,9 @@
+import { SiNodedotjs } from "react-icons/si"; 
+import { MdJavascript } from "react-icons/md"; 
+import { SiJavascript } from "react-icons/si"; 
+import { IoLogoJavascript } from "react-icons/io"; 
+import { TbBrandTypescript } from "react-icons/tb"; 
+import { SiTypescript } from "react-icons/si"; 
 import { AiFillGithub } from "react-icons/ai"; 
 import { FiFigma } from "react-icons/fi"; 
 import { BsWordpress } from "react-icons/bs"; 
@@ -28,7 +34,10 @@ const Technologies = () => {
       <motion.div className="flex flex-wrap items-center justify-center gap-4" 
       whileInView={{ opacity: 1, x:0}} initial={{opacity: 0, x: -100 }} transition={{duration: 1.5}}>
         <motion.div initial="initial" animate="animate" variants={iconVariants(2)}>
-            <IoLogoNodejs className="text-7xl text-green-500" />
+            <SiNodedotjs className="text-7xl text-green-500" />
+        </motion.div>
+        <motion.div initial="initial" animate="animate" variants={iconVariants(2)}>
+            <TbBrandTypescript className="text-7xl text-blue-500" />
         </motion.div>
         <motion.div className="p-4" initial="initial" animate="animate" variants={iconVariants(2.5)}>
             <FaReact className="text-7xl text-cyan-400" />
@@ -46,6 +55,7 @@ const Technologies = () => {
             <AiFillGithub className="text-7xl"/>
         </motion.div>
       </motion.div>
+      
     </div>
   )
 }

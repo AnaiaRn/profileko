@@ -21,7 +21,7 @@ const Navbar = () => {
         target='_blank' rel='noopener noreferrer' aria-label='GitHub'>
             <AiFillGithub />
         </a>
-        <a href="https://www.instagram.com/anaia002"
+        <a href="https://www.instagram.com/anaiaa002"
         target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
             <AiFillInstagram />
         </a>

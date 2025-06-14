@@ -14,22 +14,25 @@ const Navbar = () => {
         </a>
     </div>
     <div className='m-8 flex items-center justify-center gap-4 text-2xl'>
-        <a href="https://www.linkdine.com/in/Anaïa+Randrianantenaina"
+        <a href="https://www.linkedin.com/in/ana%C3%AFa-randrianantenaina-5b78922aa/"
         target='_blank' rel='noopener noreferrer' aria-label='LinkedIn'>
             <AiFillLinkedin />
         </a>
-        <a href="https://www.github.com/in/AnaiaRn"
+        <a href="https://github.com/AnaiaRn"
         target='_blank' rel='noopener noreferrer' aria-label='GitHub'>
             <AiFillGithub />
         </a>
-        <a href="https://www.instagram.com/in/anaia002"
+        <a href="https://www.instagram.com/anaia002"
         target='_blank' rel='noopener noreferrer' aria-label='Instagram'>
             <AiFillInstagram />
         </a>
-        <a href="https://www.gmail.com/in/anaiarandrianantenaina@gmail.com"
-        target='_blank' rel='noopener noreferrer' aria-label='Gmail'>
+       <a href="mailto:anaiarandrianantenaina@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Envoyer un mail à Anaia" >
             <TbBrandGmail />
         </a>
+
     </div>
    </nav>
   )

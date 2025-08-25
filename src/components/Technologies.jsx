@@ -1,16 +1,11 @@
 import { SiNodedotjs } from "react-icons/si"; 
-import { MdJavascript } from "react-icons/md"; 
-import { SiJavascript } from "react-icons/si"; 
-import { IoLogoJavascript } from "react-icons/io"; 
 import { TbBrandTypescript } from "react-icons/tb"; 
-import { SiTypescript } from "react-icons/si"; 
 import { AiFillGithub } from "react-icons/ai"; 
 import { FiFigma } from "react-icons/fi"; 
 import { BsWordpress } from "react-icons/bs"; 
 import { TbBrandNextjs } from "react-icons/tb"; 
 import { FaReact } from "react-icons/fa"; 
-import { IoLogoNodejs } from "react-icons/io"; 
-import { animate, motion } from "framer-motion"
+import { motion } from "framer-motion"
 
 const iconVariants = (duration) => ({
   initial: { y: -10 },

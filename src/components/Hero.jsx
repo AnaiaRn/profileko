@@ -27,6 +27,7 @@ const Hero = () => {
                 border-stone-900 rounded-3xl" width={350} height={250} initial={{ x: 100, opacity : 0}}
                 animate={{ x:0, opacity:1}} transition={{duration:1, depaly:3.5}}/>
             </div>
+            <div></div>
         </div>
         <div className="w-full lg:w-1/2">
             <motion.div className="flex flex-col items-center lg:items-start mt-10"

@@ -33,7 +33,7 @@ const Hero = () => {
             <motion.div className="flex flex-col items-center lg:items-start mt-10"
             initial="hidden" animate="visible" variants={containerVariants} >
                 <motion.h2 className="pb-2 text-4xl tracking-tighter lg:text-7xl" variants={childVariants}>
-                    Anaïa Randrianantenainaaa
+                    Anaïa Randrianantenaina
                 </motion.h2>
                 <motion.span className="bg-gradient-to-r from-stone-300 to-stone-600
                  bg-clip-text text-xl tracking-tight lg:text-3xl" variants={childVariants} >

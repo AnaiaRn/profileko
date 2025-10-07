@@ -27,7 +27,7 @@ const Projects = () => {
                 </p>
                 <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium">Role:</span> Team Leader, UI/UX Designer & Fullstack Developer </p>
                 <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium">Github:</span>
-                 <a href="https://github.com/AnaiaRn/f_labo.git" className="underline">https://github.com/AnaiaRn/f_labo.git</a> 
+                 <a href="https://github.com/AnaiaRn/f_labo.git" title="github" className="underline">https://github.com/AnaiaRn/f_labo.git</a> 
                 </p>
                 <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
                 text-stone-300">NextJS</span>
@@ -56,7 +56,7 @@ const Projects = () => {
                 </p>
                 <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Role:</span> Team Leader, UI/UX Designer & Frontend Developer</p>
                 <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Github:</span>
-                 <a href="https://github.com/AnaiaRn/INNOVATORS.git" className="underline">https://github.com/AnaiaRn/INNOVATORS.git</a>
+                 <a href="https://github.com/AnaiaRn/INNOVATORS.git" title="aonaa" className="underline">https://github.com/AnaiaRn/INNOVATORS.git</a>
                 </p>
                 <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
                 text-stone-300">NextJS</span>

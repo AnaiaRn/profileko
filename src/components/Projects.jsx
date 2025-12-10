@@ -185,7 +185,7 @@ const Projects = () => {
         </div>
       </div>
 
-       {/* UPLIFE*/}
+       {/* PROVAT GOURMET*/}
        <div>
         <div className="mb-8 flex flex-wrap">
         <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>

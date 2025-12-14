@@ -161,7 +161,7 @@ const Projects = () => {
       </div>
 
       {/* UPLIFE*/}
-       <div>
+       {/* <div>
         <div className="mb-8 flex flex-wrap">
         <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
             <img src={Uplife} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
@@ -183,7 +183,7 @@ const Projects = () => {
                 text-stone-300">PrototypingDesign</span>
             </motion.div>
         </div>
-      </div>
+      </div> */}
 
        {/* PROVAT GOURMET*/}
        <div>

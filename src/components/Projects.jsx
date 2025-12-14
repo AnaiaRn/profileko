@@ -160,30 +160,7 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* UPLIFE*/}
-       {/* <div>
-        <div className="mb-8 flex flex-wrap">
-        <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
-            <img src={Uplife} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
-        </motion.div>
-            <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{ opacity: 1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}}>
-                <h3 className="mb-2 font-semibold text-2xl">Up Life – Anaïa Randrianantenaina</h3>
-                <p className="mb-4 text-stone-400">Web ecosystem design concept integrating entertainment, social networking, 
-                  marketplace, and creator space into a unified digital platform. Designed as a modern, gamified experience where 
-                  users can choose between passive consumption ("Enjoy") and active empire building. I designed the complete user
-                   experience, created interactive prototypes with Figma, and defined the visual identity for all four service pillars with a cohesive design system.
-                </p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Role:</span> UX/UI Designer, Product Designer</p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Figma:</span>
-                 <a href="https://www.figma.com/design/t81kO8c2q9jOWVZ0enhMY3/UP_LIFE?node-id=0-1&t=QxVhCR63fDvgvrCr-1" title="aonaa" className="underline">https://www.figma.com/design/uplife</a>
-                </p>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Figma</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">PrototypingDesign</span>
-            </motion.div>
-        </div>
-      </div> */}
+      
 
        {/* PROVAT GOURMET*/}
        <div>

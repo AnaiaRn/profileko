@@ -41,6 +41,43 @@ const Experience = () => {
             </motion.div> 
         </div>
 
+        <div className="mb-8 flex flex-wrap lg:justify-center">
+    <motion.div className="w-full lg:w-1/4" whileInView={{opacity: 1, x:0 }} initial={{opacity:0, x:-100}} transition={{duration: 1}}>
+        <p className="mb-2 text-sm text-stone-400">
+            August 2025 - November 2025
+        </p>
+    </motion.div>
+    <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:100}} transition={{ duration: 1}}>
+        <h3 className="mb-2 font-semibold">
+            UI/UX Designer & Frontend Developer - {}
+            <span className="text-sm text-stone-500">
+                 Ask'avao Service
+            </span>
+        </h3>
+        <p className="mb-4 text-stone-400">
+            Designed user interfaces and experiences for web applications, creating wireframes, 
+            prototypes, and interactive mockups with Figma. Developed reusable React components and integrated 
+            APIs with responsive, accessible interfaces. Conducted user research and usability testing to 
+            inform design decisions and improve product usability.
+        </p>
+        <span className="mr-2 mt-4 rounded bg-stone-900 px-2 py-1 text-sm font-medium text-stone-300">
+            Figma
+        </span>
+        <span className="mr-2 mt-4 rounded bg-stone-900 px-2 py-1 text-sm font-medium text-stone-300">
+            React
+        </span>
+        <span className="mr-2 mt-4 rounded bg-stone-900 px-2 py-1 text-sm font-medium text-stone-300">
+            Javascript
+        </span>
+        <span className="mr-2 mt-4 rounded bg-stone-900 px-2 py-1 text-sm font-medium text-stone-300">
+            Tailwind CSS
+        </span>
+        <span className="mr-2 mt-4 rounded bg-stone-900 px-2 py-1 text-sm font-medium text-stone-300">
+            UX Research
+        </span>
+    </motion.div> 
+</div>
+
 
         {/* 1 */}
         <div className="mb-8 flex flex-wrap lg:justify-center">

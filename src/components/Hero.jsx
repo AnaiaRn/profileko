@@ -37,7 +37,7 @@ const Hero = () => {
                 </motion.h2>
                 <motion.span className="bg-gradient-to-r from-stone-300 to-stone-600
                  bg-clip-text text-xl tracking-tight lg:text-3xl" variants={childVariants} >
-                    Frontend Developer / UI/UX Designer 
+                    Designer UI/UX & Intégrateur Front‑End
                  </motion.span>
                  <motion.p className="my-2 max-w-lg py-6 text-[17px] leading-relaxed tracking-tighter lg:text-xl">
                   Hello! I'm a passionate frontend developer, specialized in React and Next.js.

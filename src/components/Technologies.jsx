@@ -40,9 +40,6 @@ const Technologies = () => {
         <motion.div className="p-4" initial="initial" animate="animate" variants={iconVariants(4.5)}>
             <TbBrandNextjs className="text-7xl"/>
         </motion.div>
-        <motion.div className="p-4" initial="initial" animate="animate" variants={iconVariants(1.5)}>
-            <BsWordpress className="text-7xl text-gray-500"/>
-        </motion.div>
         <motion.div className="p-4" initial="initial" animate="animate" variants={iconVariants(5.5)}>
             <FiFigma className="text-6xl "/>
         </motion.div>

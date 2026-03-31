@@ -186,6 +186,33 @@ const Projects = () => {
             </motion.div>
         </div>
       </div>
+
+
+      {/* UP LIFE*/}
+       <div>
+        <div className="mb-8 flex flex-wrap">
+        <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
+            <img src={Uplife} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
+        </motion.div>
+            <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{ opacity: 1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}}>
+                <h3 className="mb-2 font-semibold text-2xl">UPLIFE– Anaïa Randrianantenaina</h3>
+                <p className="mb-4 text-stone-400">Website for a cutting-edge cryptocurrency platform showcasing its secure trading ecosystem, 
+                    real-time market analytics, and decentralized finance (DeFi) solutions. Designed as a sleek, high-performance interface to 
+                    communicate the brand’s commitment to financial transparency, security, and technological innovation. I designed the complete
+                     user experience focusing on complex data visualization and seamless transaction flows, created high-fidelity mockups with Figma,
+                    and developed the entire responsive web application.
+                </p>
+                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Role:</span> UX/UI Designer, Product Designer</p>
+                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Figma:</span>
+                 <a href="https://www.figma.com/design/t81kO8c2q9jOWVZ0enhMY3/UP_LIFE?node-id=0-1&t=sLh9d7S3fPxNPONL-1" title="aonaa" className="underline">https://www.figma.com/design/uplife</a>
+                </p>
+                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
+                text-stone-300">Figma</span>
+                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
+                text-stone-300">PrototypingDesign</span>
+            </motion.div>
+        </div>
+      </div>
      
 
     </div>

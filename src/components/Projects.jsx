@@ -6,6 +6,8 @@ import Port1 from "../assets/port1.png"
 import Uplife from "../assets/uplife.png"
 import PROVA from "../assets/PROVA.png"
 import Nuklear from "../assets/nuklear.png"
+import Rps from "../assets/rps.png"
+import Eev from "../assets/eev.png"
 import { motion } from "framer-motion"
 const Projects = () => {
   return (
@@ -14,6 +16,56 @@ const Projects = () => {
       initial={{ opacity: 0, y: -100 }} transition={{ duration : 0.5}}>
         Projects
       </motion.h2>
+
+       {/* ANALYSE RPS*/}
+      <div>
+        <div className="mb-8 flex flex-wrap">
+            <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
+            <img src={Rps} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
+            </motion.div>
+            <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{ opacity: 1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}}>
+                <h3 className="mb-2 font-semibold text-2xl">RPS Workflow Automation (Quebec)</h3>
+                <p className="mb-4 text-stone-400">Design and implementation of automation workflows with N8N 
+                    for a client platform targeting the Quebec market. The project covers AI-driven automated data analysis,
+                     as well as email follow-ups based on defined criteria, helping to streamline and improve the reliability
+                      of the client's internal processes.
+                </p>
+                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium">Role:</span> Automation n8n </p>
+               
+                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
+                text-stone-300">N8N</span>
+                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
+                text-stone-300">Mistral AI,</span>
+                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
+                text-stone-300">SendGrid</span>
+                
+            </motion.div>
+        </div>
+      </div>
+
+       {/* ÉCOLOGIE VERTE */}
+      <div>
+        <div className="mb-8 flex flex-wrap">
+            <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
+            <img src={Eev} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
+            </motion.div>
+            <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{ opacity: 1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}}>
+                <h3 className="mb-2 font-semibold text-2xl">Ecology & Green Energy</h3>
+                <p className="mb-4 text-stone-400">Automated article publishing workflow with N8N: automatic content retrieval, 
+                    AI-assisted rewriting via OpenAI, and human validation by email before the article goes live on the site.
+                </p>
+                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium">Role:</span> Automation n8n </p>
+               
+                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
+                text-stone-300">N8N</span>
+                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
+                text-stone-300">Mistral AI,</span>
+                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
+                text-stone-300">SendGrid</span>
+                
+            </motion.div>
+        </div>
+      </div>
 
       {/* LABORATOIRE CHU */}
       <div>

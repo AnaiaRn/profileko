@@ -40,15 +40,12 @@ const Hero = () => {
                     Designer UI/UX & Intégrateur Front‑End
                  </motion.span>
                  <motion.p className="my-2 max-w-lg py-6 text-[17px] leading-relaxed tracking-tighter lg:text-xl">
-                  Hello! I'm a passionate frontend developer, specialized in React and Next.js.
-                  I love building modern, dynamic, and high-performance interfaces that bring ideas to life.
-
-                  With a strong eye for UI/UX design, I craft user experiences that are both intuitive and visually appealing.
-                  I pay attention to every detail to ensure smooth and responsive user journeys across all screen sizes.
-
-                  I also create professional and customized websites using WordPress, combining flexibility, speed, and tailored solutions to meet client needs.
-
-                  My goal? To turn your vision into clean, creative, and functional web solutions.
+                  Hello! I'm a passionate frontend developer, specialized in React and Next.js. 
+                  I love building modern, dynamic, and high-performance interfaces that bring ideas to life. 
+                  With a strong eye for UI/UX design, I craft user experiences that are both intuitive and visually appealing. 
+                  I pay attention to every detail to ensure smooth and responsive user journeys across all screen sizes. 
+                  Beyond the frontend, I design automation workflows with n8n to streamline processes and connect tools efficiently. 
+                  My goal? To turn your vision into clean, creative, and functional web solutions
 
                  </motion.p>
                 <motion.a href="/CV_Anaïa_RANDRIANANTENAINA.pdf" target="_blank" rel="noopener noreferrer"

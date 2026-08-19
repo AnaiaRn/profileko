@@ -46,6 +46,7 @@ const Technologies = () => {
         <motion.div className="p-4" initial="initial" animate="animate" variants={iconVariants(3.5)}>
             <AiFillGithub className="text-7xl"/>
         </motion.div>
+        
       </motion.div>
       
     </div>

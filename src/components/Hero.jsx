@@ -37,16 +37,14 @@ const Hero = () => {
                 </motion.h2>
                 <motion.span className="bg-gradient-to-r from-stone-300 to-stone-600
                  bg-clip-text text-xl tracking-tight lg:text-3xl" variants={childVariants} >
-                    Designer UI/UX & Intégrateur Front‑End
+                    UI/UX Designer & Frontend Developer (React/Next.js) | n8n Automation
                  </motion.span>
                  <motion.p className="my-2 max-w-lg py-6 text-[17px] leading-relaxed tracking-tighter lg:text-xl">
-                  Hello! I'm a passionate frontend developer, specialized in React and Next.js.
-                  I love building modern, dynamic, and high-performance interfaces that bring ideas to life.
+                 Hello! I'm a passionate frontend developer, specialized in React and Next.js.
+                  I love building modern, dynamic, and high-performance interfaces that bring ideas to life. With a strong eye for UI/UX design, 
+                  I craft user experiences that are both intuitive and visually appealing, paying close attention to every detail to ensure smooth and responsive user journeys across all screen sizes.
 
-                  With a strong eye for UI/UX design, I craft user experiences that are both intuitive and visually appealing.
-                  I pay attention to every detail to ensure smooth and responsive user journeys across all screen sizes.
-
-                  I also create professional and customized websites using WordPress, combining flexibility, speed, and tailored solutions to meet client needs.
+                  I also design and implement automation workflows with n8n, helping streamline processes and connect tools to save time and improve efficiency.
 
                   My goal? To turn your vision into clean, creative, and functional web solutions.
 

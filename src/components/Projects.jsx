@@ -8,290 +8,221 @@ import PROVA from "../assets/PROVA.png"
 import Nuklear from "../assets/nuklear.png"
 import Rps from "../assets/rps.png"
 import Eev from "../assets/eev.png"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
+import { useState } from "react"
+
+const categories = [
+  { id: "all", label: "All" },
+  { id: "design", label: "Design" },
+  { id: "dev", label: "Dev" },
+  { id: "n8n", label: "N8N" },
+]
+
+const projectsData = [
+  {
+    id: "rps",
+    category: "n8n",
+    image: Rps,
+    title: "RPS Workflow Automation (Quebec)",
+    role: "Automation n8n",
+    description: "Design and implementation of automation workflows with N8N for a client platform targeting the Quebec market. Covers AI-driven data analysis and email follow-ups.",
+    tags: ["N8N", "Mistral AI", "SendGrid"],
+    github: null,
+  },
+  {
+    id: "eev",
+    category: "n8n",
+    image: Eev,
+    title: "Ecology & Green Energy",
+    role: "Automation n8n",
+    description: "Automated article publishing workflow with N8N: content retrieval, AI-assisted rewriting via OpenAI, and human validation by email before publishing.",
+    tags: ["N8N", "Mistral AI", "SendGrid"],
+    github: null,
+  },
+  {
+    id: "labo",
+    category: "dev",
+    image: Labo,
+    title: "Laboratory Management System - CHU Tambohobe",
+    role: "Team Leader, UI/UX Designer & Fullstack Developer",
+    description: "Analytical dashboard app for CHU Tambohobe to centralize, visualize, and analyze medical data with interactive dashboards and automated reports.",
+    tags: ["Figma", "NextJS", "NestJS", "Tailwind CSS", "Postgresql"],
+    github: "https://github.com/AnaiaRn/f_labo.git",
+  },
+  {
+    id: "innovators",
+    category: "dev",
+    image: Access,
+    title: "Innovators – Dev Hub ACCES Bank, Fianarantsoa",
+    role: "Team Leader, UI/UX Designer & Frontend Developer",
+    description: "Hackathon project (Dev Hub ACCES Bank): innovative solution to digitalize corporate purchase management.",
+    tags: ["Figma", "NextJS", "NestJS", "Tailwindcss", "Postgresql"],
+    github: "https://github.com/AnaiaRn/INNOVATORS.git",
+  },
+  {
+    id: "mybudget",
+    category: "dev",
+    image: Budget,
+    title: "MyBudget – EMIT Fianarantsoa",
+    role: "UI/UX Designer, Fullstack Developer",
+    description: "AI-powered personal budget management app developed within EMIT, to simplify and automate personal financial planning.",
+    tags: ["Java EE", "JSP", "Html", "Tailwindcss", "PostgreSQL"],
+    github: "https://github.com/AnaiaRn/mybudget.git",
+  },
+  {
+    id: "port",
+    category: "dev",
+    image: Port,
+    title: "PortFolio – Anaïa Randrianantenaina",
+    role: "UI/UX Designer, Frontend Developer",
+    description: "First version of my professional portfolio showcasing early projects, design experiments, and web development skills.",
+    tags: ["Figma", "React", "Tailwindcss", "Frame Motion"],
+    github: "https://github.com/AnaiaRn/PortFolio.git",
+  },
+  {
+    id: "port1",
+    category: "dev",
+    image: Port1,
+    title: "Portfolio (Current) – Anaïa Randrianantenaina",
+    role: "UI/UX Designer, Frontend Developer",
+    description: "Modern, dynamic, responsive portfolio reflecting my evolution as a developer and designer.",
+    tags: ["Figma", "React", "Tailwind CSS", "Framer Motion"],
+    github: null,
+  },
+  {
+    id: "prova",
+    category: "design",
+    image: PROVA,
+    title: "Prova Gourmet – Anaïa Randrianantenaina",
+    role: "UX/UI Designer, Product Designer",
+    description: "Website for a premium vanilla producer showcasing sustainable farming, gourmet products, and culinary recipes.",
+    tags: ["Figma", "PrototypingDesign"],
+    figma: "https://www.figma.com/design/Yf12e1wdXxy1YjNQnDHkPK/PROVA-Gourmet---?t=QxVhCR63fDvgvrCr-1",
+  },
+  {
+    id: "uplife",
+    category: "design",
+    image: Uplife,
+    title: "UPLIFE – Anaïa Randrianantenaina",
+    role: "UX/UI Designer, Product Designer",
+    description: "Website for a crypto trading platform: secure trading ecosystem, real-time analytics, and DeFi solutions.",
+    tags: ["Figma", "PrototypingDesign"],
+    figma: "https://www.figma.com/design/t81kO8c2q9jOWVZ0enhMY3/UP_LIFE?node-id=0-1&t=sLh9d7S3fPxNPONL-1",
+  },
+  {
+    id: "nuklear",
+    category: "design",
+    image: Nuklear,
+    title: "NUKLEAR - Anaïa Randrianantenaina",
+    role: "UX/UI Designer, Product Designer",
+    description: "High-conversion landing page (technical assessment) with streamlined user journey and modular UI components.",
+    tags: ["Figma", "PrototypingDesign"],
+    figma: "https://www.figma.com/design/uPgHEOEcq6guGDhCQmmzLA/Test-NUKLEAR---Ana%C3%AFa-Randrianantenaina?node-id=1-16&t=sLh9d7S3fPxNPONL-1",
+  },
+]
+
+const ProjectCard = ({ project, index }) => {
+  const [expanded, setExpanded] = useState(false)
+
+  return (
+    <motion.div
+      layout
+      className="flex flex-col rounded-2xl bg-stone-900/40 overflow-hidden"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4, delay: (index % 3) * 0.08 }}
+    >
+      <img src={project.image} alt={project.title} className="h-40 w-full object-cover" />
+
+      <div className="flex flex-1 flex-col p-4">
+        <h3 className="mb-1 text-lg font-semibold">{project.title}</h3>
+        <p className="mb-2 text-xs font-medium text-stone-500">{project.role}</p>
+
+        <p className={`mb-3 text-sm text-stone-400 ${expanded ? "" : "line-clamp-2"}`}>
+          {project.description}
+        </p>
+        {project.description.length > 100 && (
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="mb-3 self-start text-xs underline text-stone-400"
+          >
+            {expanded ? "Voir moins" : "Voir plus"}
+          </button>
+        )}
+
+        <div className="mb-3 flex flex-wrap gap-2">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded bg-stone-900 px-2 py-1 text-xs font-medium text-stone-300"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="mt-auto flex gap-3 text-sm">
+          {project.github && (
+            <a href={project.github} target="_blank" rel="noreferrer" className="underline text-stone-300">
+              Github
+            </a>
+          )}
+          {project.figma && (
+            <a href={project.figma} target="_blank" rel="noreferrer" className="underline text-stone-300">
+              Figma
+            </a>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  )
+}
+
 const Projects = () => {
+  const [activeCategory, setActiveCategory] = useState("all")
+
+  const filteredProjects =
+    activeCategory === "all"
+      ? projectsData
+      : projectsData.filter((p) => p.category === activeCategory)
+
   return (
     <div className="pb-4">
-      <motion.h2 className="my-20 text-center text-4xl" whileInView={{ opacity: 1, y: 0}}
-      initial={{ opacity: 0, y: -100 }} transition={{ duration : 0.5}}>
+      <motion.h2
+        className="my-20 text-center text-4xl"
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: -100 }}
+        transition={{ duration: 0.5 }}
+      >
         Projects
       </motion.h2>
 
-       {/* ANALYSE RPS*/}
-      <div>
-        <div className="mb-8 flex flex-wrap">
-            <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
-            <img src={Rps} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
-            </motion.div>
-            <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{ opacity: 1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}}>
-                <h3 className="mb-2 font-semibold text-2xl">RPS Workflow Automation (Quebec)</h3>
-                <p className="mb-4 text-stone-400">Design and implementation of automation workflows with N8N 
-                    for a client platform targeting the Quebec market. The project covers AI-driven automated data analysis,
-                     as well as email follow-ups based on defined criteria, helping to streamline and improve the reliability
-                      of the client's internal processes.
-                </p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium">Role:</span> Automation n8n </p>
-               
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">N8N</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Mistral AI,</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">SendGrid</span>
-                
-            </motion.div>
-        </div>
+      {/* Menu catégories */}
+      <div className="mb-10 flex justify-center gap-3">
+        {categories.map((cat) => (
+          <button
+            key={cat.id}
+            onClick={() => setActiveCategory(cat.id)}
+            className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${
+              activeCategory === cat.id
+                ? "bg-stone-100 text-stone-900"
+                : "bg-stone-900 text-stone-400 hover:text-stone-200"
+            }`}
+          >
+            {cat.label}
+          </button>
+        ))}
       </div>
 
-       {/* ÉCOLOGIE VERTE */}
-      <div>
-        <div className="mb-8 flex flex-wrap">
-            <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
-            <img src={Eev} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
-            </motion.div>
-            <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{ opacity: 1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}}>
-                <h3 className="mb-2 font-semibold text-2xl">Ecology & Green Energy</h3>
-                <p className="mb-4 text-stone-400">Automated article publishing workflow with N8N: automatic content retrieval, 
-                    AI-assisted rewriting via OpenAI, and human validation by email before the article goes live on the site.
-                </p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium">Role:</span> Automation n8n </p>
-               
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">N8N</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Mistral AI,</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">SendGrid</span>
-                
-            </motion.div>
-        </div>
-      </div>
-
-      {/* LABORATOIRE CHU */}
-      <div>
-        <div className="mb-8 flex flex-wrap">
-            <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
-            <img src={Labo} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
-            </motion.div>
-            <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{ opacity: 1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}}>
-                <h3 className="mb-2 font-semibold text-2xl">Laboratory Management System - CHU Tambohobe</h3>
-                <p className="mb-4 text-stone-400">Design and development of an analytical dashboard application
-                Project carried out within the CHU Tambohobe laboratory to centralize, visualize, and analyze 
-                medical data through interactive dashboards, dynamic charts, and automated reports.
-                I led the development team, designed user interfaces, built the frontend (Next.js) and backend (NestJS), and handled database and API integration.
-                </p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium">Role:</span> Team Leader, UI/UX Designer & Fullstack Developer </p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium">Github:</span>
-                 <a href="https://github.com/AnaiaRn/f_labo.git" title="github" className="underline">https://github.com/AnaiaRn/f_labo.git</a> 
-                </p>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Figma</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">NextJS</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">NestJS</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Tailwind CSS</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Postgresql</span>
-            </motion.div>
-        </div>
-      </div>
-
-      {/* INNOVATORS*/}
-      <div>
-        <div className="mb-8 flex flex-wrap">
-        <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
-            <img src={Access} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
-        </motion.div>
-            <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{ opacity: 1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}}>
-                <h3 className="mb-2 font-semibold text-2xl">Innovators – Dev Hub ACCES Bank, Fianarantsoa</h3>
-                <p className="mb-4 text-stone-400">Web application for reinventing corporate purchase management
-                Project developed during a hackathon organized by the Development Hub of ACCES Bank in Andrainjato, Fianarantsoa.
-                The goal was to design an innovative solution to streamline and digitalize business purchasing processes.
-                I led the team, crafted the user experience and interface design, and developed the frontend using modern technologies (React).
-                </p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Role:</span> Team Leader, UI/UX Designer & Frontend Developer</p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Github:</span>
-                 <a href="https://github.com/AnaiaRn/INNOVATORS.git" title="aonaa" className="underline">https://github.com/AnaiaRn/INNOVATORS.git</a>
-                </p>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Figma</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">NextJS</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">NestJS</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Tailwindcss</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Postgresql</span>
-            </motion.div>
-        </div>
-      </div>
-
-      {/* MYBUDGET */}
-      <div>
-        <div className="mb-8 flex flex-wrap">
-        <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
-            <img src={Budget} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
-        </motion.div>
-            <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{ opacity: 1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}}>
-                <h3 className="mb-2 font-semibold text-2xl">MyBudget – EMIT Fianarantsoa</h3>
-                <p className="mb-4 text-stone-400">Web application for personal budget management powered by artificial intelligence.
-                Project developed within EMIT in Fianarantsoa.
-                 The goal was to create a smart and intuitive solution to simplify and automate personal financial planning.
-                </p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Role:</span> UI/UX Designer, Fullstack Developer</p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Github:</span>
-                 <a href="https://github.com/AnaiaRn/mybudget.git" className="underline">https://github.com/AnaiaRn/mybudget.git</a>
-                </p>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Java EE</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">JSP</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Html</span>
-                 <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Tailwindcss</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">PostgreSQL</span>
-            </motion.div>
-        </div>
-      </div>
-    
-      {/* PORTFOLIO */}
-      <div>
-        <div className="mb-8 flex flex-wrap">
-        <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
-            <img src={Port} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
-        </motion.div>
-            <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{ opacity: 1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}}>
-                <h3 className="mb-2 font-semibold text-2xl">PortFolio – Anaïa Randrianantenaina</h3>
-                <p className="mb-4 text-stone-400">First version of my professional portfolio showcasing early projects,
-                   design experiments, and personal development in web technologies.
-                Developed to present my growing skills in frontend and fullstack development, as well as UI/UX design.
-                </p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Role:</span> UI/UX Designer, Frontend Developer</p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Github:</span>
-                <a href="https://github.com/AnaiaRn/PortFolio.git" className="underline">https://github.com/AnaiaRn/PortFolio.git</a>
-                </p>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Figma</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">React</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Tailwindcss</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Frame Motion</span>
-            </motion.div>
-        </div>
-      </div>
-
-       {/* PORTFOLIO 1*/}
-       <div>
-        <div className="mb-8 flex flex-wrap">
-        <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
-            <img src={Port1} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
-        </motion.div>
-            <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{ opacity: 1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}}>
-                <h3 className="mb-2 font-semibold text-2xl">Portfolio (Current) – Anaïa Randrianantenaina</h3>
-                <p className="mb-4 text-stone-400">Web portfolio showcasing my latest projects, design work, and fullstack development skills.
-                Built as a modern, dynamic, and responsive site to reflect my evolution as a developer and designer.
-                I designed the full user experience, created mockups with Figma, and developed
-                the entire site using modern technologies such as React, Tailwind CSS, Framer Motion, and other performance-optimized tools.
-                </p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Role:</span> UI/UX Designer, Frontend Developer</p>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Figma</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">React</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Tailwind CSS</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Framer Motion</span>
-            </motion.div>
-        </div>
-      </div>
-
-      
-
-       {/* PROVAT GOURMET*/}
-       <div>
-        <div className="mb-8 flex flex-wrap">
-        <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
-            <img src={PROVA} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
-        </motion.div>
-            <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{ opacity: 1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}}>
-                <h3 className="mb-2 font-semibold text-2xl">Prova Gourmet – Anaïa Randrianantenaina</h3>
-                <p className="mb-4 text-stone-400">Website for a premium vanilla producer showcasing their sustainable farming practices, 
-                  gourmet products, and culinary recipes. Designed as an elegant, informative platform to communicate the brand's commitment
-                   to quality and environmental responsibility. I designed the complete user experience focusing on product presentation and
-                    brand storytelling, created high-fidelity mockups with Figma, and developed the entire responsive website.
-                </p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Role:</span> UX/UI Designer, Product Designer</p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Figma:</span>
-                 <a href="https://www.figma.com/design/Yf12e1wdXxy1YjNQnDHkPK/PROVA-Gourmet---?t=QxVhCR63fDvgvrCr-1" title="aonaa" className="underline">https://www.figma.com/design/provagourmet</a>
-                </p>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Figma</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">PrototypingDesign</span>
-            </motion.div>
-        </div>
-      </div>
-
-
-      {/* UP LIFE*/}
-       <div>
-        <div className="mb-8 flex flex-wrap">
-        <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
-            <img src={Uplife} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
-        </motion.div>
-            <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{ opacity: 1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}}>
-                <h3 className="mb-2 font-semibold text-2xl">UPLIFE – Anaïa Randrianantenaina</h3>
-                <p className="mb-4 text-stone-400">Website for a cutting-edge cryptocurrency platform showcasing its secure trading ecosystem, 
-                    real-time market analytics, and decentralized finance (DeFi) solutions. Designed as a sleek, high-performance interface to 
-                    communicate the brand’s commitment to financial transparency, security, and technological innovation. I designed the complete
-                     user experience focusing on complex data visualization and seamless transaction flows, created high-fidelity mockups with Figma,
-                    and developed the entire responsive web application.
-                </p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Role:</span> UX/UI Designer, Product Designer</p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Figma:</span>
-                 <a href="https://www.figma.com/design/t81kO8c2q9jOWVZ0enhMY3/UP_LIFE?node-id=0-1&t=sLh9d7S3fPxNPONL-1" title="aonaa" className="underline">https://www.figma.com/design/uplife</a>
-                </p>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Figma</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">PrototypingDesign</span>
-            </motion.div>
-        </div>
-      </div>
-
-
-      {/* NUKLEAR*/}
-       <div>
-        <div className="mb-8 flex flex-wrap">
-        <motion.div className="w-full lg:w-1/4" whileInView={{opacity:1, x:0}} initial={{opacity:0, x:-100}} transition={{ duration:1}}>
-            <img src={Nuklear} alt="" className="mb-6 rounded-2xl w-[300px] h-[200px]" />
-        </motion.div>
-            <motion.div className="w-full max-w-xl lg:w-3/4" whileInView={{ opacity: 1, x:0}} initial={{opacity:0, x:100}} transition={{duration:1}}>
-                <h3 className="mb-2 font-semibold text-2xl">NUKLEAR - Anaïa Randrianantenaina</h3>
-                <p className="mb-4 text-stone-400">High-conversion landing page designed as a technical assessment for Nuklear, focusing on a streamlined
-                     user journey and clear value proposition. The project emphasizes modular UI components and optimized information architecture to drive user engagement
-                </p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Role:</span> UX/UI Designer, Product Designer</p>
-                <p className="mb-4 text-stone-400"><span className="mr-2 rounded bg-stone-900 p-1 text-sm font-medium">Figma:</span>
-                 <a href="https://www.figma.com/design/uPgHEOEcq6guGDhCQmmzLA/Test-NUKLEAR---Ana%C3%AFa-Randrianantenaina?node-id=1-16&t=sLh9d7S3fPxNPONL-1" title="aonaa" className="underline">https://www.figma.com/design/nuklear</a>
-                </p>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">Figma</span>
-                <span className="mr-2 rounded bg-stone-900 p-2 text-sm font-medium
-                text-stone-300">PrototypingDesign</span>
-            </motion.div>
-        </div>
-      </div>
-     
-
+      {/* Grille projets */}
+      <motion.div layout className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <AnimatePresence mode="popLayout">
+          {filteredProjects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </AnimatePresence>
+      </motion.div>
     </div>
   )
 }

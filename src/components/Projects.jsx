@@ -8,6 +8,7 @@ import PROVA from "../assets/PROVA.png"
 import Nuklear from "../assets/nuklear.png"
 import Rps from "../assets/rps.png"
 import Eev from "../assets/eev.png"
+import Bacc from "../assets/bacc.png"
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 
@@ -119,6 +120,16 @@ const projectsData = [
     tags: ["Figma", "PrototypingDesign"],
     figma: "https://www.figma.com/design/uPgHEOEcq6guGDhCQmmzLA/Test-NUKLEAR---Ana%C3%AFa-Randrianantenaina?node-id=1-16&t=sLh9d7S3fPxNPONL-1",
   },
+  {
+    id: "bacc",
+    category: "design",
+    image: Bacc,
+    title: "Mentor Bacc Madagascar",
+    role: "UX/UI Designer, Product Designer",
+    description: "A platform to support high school seniors in preparing for their baccalaureate",
+    tags: ["Figma", "PrototypingDesign"],
+    figma: "https://www.figma.com/design/3lA9EPJ3WZjalpiTm0brX0/Mentor-Bacc?node-id=64-2&t=uywKNI4omZSZ93ZL-1",
+  }
 ]
 
 const ProjectCard = ({ project, index }) => {
@@ -165,12 +176,12 @@ const ProjectCard = ({ project, index }) => {
         <div className="mt-auto flex gap-3 text-sm">
           {project.github && (
             <a href={project.github} target="_blank" rel="noreferrer" className="underline text-stone-300">
-              Github
+              View Github
             </a>
           )}
           {project.figma && (
             <a href={project.figma} target="_blank" rel="noreferrer" className="underline text-stone-300">
-              Figma
+              View Figma
             </a>
           )}
         </div>
